@@ -160,8 +160,6 @@
     }
   }
 
-  // let splashingParticleCount = 50;
-  // let splashingParticleCount = 40;
   let particles = [];
   let flameParticles = [];
   let currentHue;
@@ -188,28 +186,10 @@
 
     if ($gamePlayer.direction() === 8) y -= 44;
 
-    // if ($gamePlayer.direction() === 2) y += 34;
     if ($gamePlayer.direction() === 4) x -= 14;
     if ($gamePlayer.direction() === 6) x += 14;
 
     for (let i = 0; i < splashingParticleCount; i++) {
-      // let vel = new helpers.Vec(
-      //   (Math.random() * 2 * speed - speed) / 2,
-      //   0 - Math.random() * 2 * speed
-      // );
-      // let position = new helpers.Vec(x, y);
-      // let life = i;
-      // currentHue =
-      //   "rgba(" +
-      //   (260 - life * 2) +
-      //   "," +
-      //   (life * 2 + 50) +
-      //   "," +
-      //   life * 2 +
-      //   "," +
-      //   ((splashingParticleCount - life) / splashingParticleCount) * 0.4 +
-      //   ")";
-
       var speed = 2;
       currentHue = getColor(i, speed);
       let vel = new helpers.Vec(
@@ -245,20 +225,12 @@
     }
     draw(ctx) {
       let { x, y } = this.pos;
-      // ctx.shadowColor = this.color;
       ctx.shadowBlur = 0;
-      // ctx.globalCompositeOperation = "lighter";
       ctx.fillStyle = this.color;
       ctx.fillRect(x, y, this.size, this.size);
-      // ctx.globalCompositeOperation = "source-over";
     }
     update(ctx) {
       this.draw(ctx);
-      // this.ttl += 2;
-      // if ($gamePlayer.direction() === 8) this.vel.y -= this.gravity;
-      // if ($gamePlayer.direction() === 2) this.vel.y += this.gravity;
-      // if ($gamePlayer.direction() === 4) this.vel.x -= this.gravity;
-      // if ($gamePlayer.direction() === 6) this.vel.x += this.gravity;
     }
   }
 
